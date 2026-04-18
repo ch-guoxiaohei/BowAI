@@ -127,13 +127,21 @@ const chartData = computed(() => {
 })
 
 onMounted(() => {
-  const pages = getCurrentPages()
-  const currentPage = pages[pages.length - 1]
-  const options = currentPage.options || {}
-  sessionId.value = options.id || ''
-  
+  getSessionId()
   loadSession()
 })
+
+const getSessionId = () => {
+  try {
+    const pages = getCurrentPages()
+    const currentPage = pages[pages.length - 1]
+    const options = currentPage.options || {}
+    sessionId.value = options.id || ''
+  } catch (error) {
+    console.error('获取session ID失败:', error)
+    sessionId.value = ''
+  }
+}
 
 const loadSession = async () => {
   if (!sessionId.value) {
