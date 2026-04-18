@@ -1,0 +1,286 @@
+@use './variables.scss' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+page {
+  background-color: $background-color;
+  color: $text-color;
+  font-size: $font-size-md;
+  line-height: 1.5;
+}
+
+.container {
+  padding: $spacing-md;
+}
+
+.card {
+  background-color: $white;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  box-shadow: $box-shadow;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius-md;
+  font-size: $font-size-md;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &-primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &-success {
+    background-color: $success-color;
+    color: $white;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &-danger {
+    background-color: $danger-color;
+    color: $white;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &-warning {
+    background-color: $warning-color;
+    color: $white;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &-default {
+    background-color: $white;
+    color: $text-color;
+    border: 1px solid $border-color;
+
+    &:active {
+      background-color: $background-color;
+    }
+  }
+
+  &-block {
+    display: flex;
+    width: 100%;
+  }
+
+  &-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+  }
+
+  &-sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.form-item {
+  margin-bottom: $spacing-md;
+
+  &-label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $text-color-secondary;
+  }
+
+  &-input {
+    width: 100%;
+    padding: $spacing-sm;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-md;
+    background-color: $white;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+
+    &::placeholder {
+      color: $text-color-light;
+    }
+  }
+
+  &-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-primary {
+    color: $primary-color;
+  }
+
+  &-success {
+    color: $success-color;
+  }
+
+  &-warning {
+    color: $warning-color;
+  }
+
+  &-danger {
+    color: $danger-color;
+  }
+
+  &-secondary {
+    color: $text-color-secondary;
+  }
+
+  &-light {
+    color: $text-color-light;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-between {
+    justify-content: space-between;
+  }
+
+  &-around {
+    justify-content: space-around;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.margin {
+  &-top {
+    &-xs {
+      margin-top: $spacing-xs;
+    }
+    &-sm {
+      margin-top: $spacing-sm;
+    }
+    &-md {
+      margin-top: $spacing-md;
+    }
+    &-lg {
+      margin-top: $spacing-lg;
+    }
+  }
+
+  &-bottom {
+    &-xs {
+      margin-bottom: $spacing-xs;
+    }
+    &-sm {
+      margin-bottom: $spacing-sm;
+    }
+    &-md {
+      margin-bottom: $spacing-md;
+    }
+    &-lg {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &-left {
+    &-xs {
+      margin-left: $spacing-xs;
+    }
+    &-sm {
+      margin-left: $spacing-sm;
+    }
+    &-md {
+      margin-left: $spacing-md;
+    }
+    &-lg {
+      margin-left: $spacing-lg;
+    }
+  }
+
+  &-right {
+    &-xs {
+      margin-right: $spacing-xs;
+    }
+    &-sm {
+      margin-right: $spacing-sm;
+    }
+    &-md {
+      margin-right: $spacing-md;
+    }
+    &-lg {
+      margin-right: $spacing-lg;
+    }
+  }
+}
+
+.padding {
+  &-xs {
+    padding: $spacing-xs;
+  }
+  &-sm {
+    padding: $spacing-sm;
+  }
+  &-md {
+    padding: $spacing-md;
+  }
+  &-lg {
+    padding: $spacing-lg;
+  }
+  &-xl {
+    padding: $spacing-xl;
+  }
+}
+
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
